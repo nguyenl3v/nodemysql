@@ -17,3 +17,8 @@ module.exports.registerController = async function (req, res){
     })
   }
 }
+
+module.exports.getAllUser = async function (req, res) {
+  const user = await User.findAll({});
+  res.status(200).json(user);
+}
