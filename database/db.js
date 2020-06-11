@@ -6,7 +6,7 @@ const sequelize = new Sequelize("base","root","nguyen",{
   operatorsAliases: 1,
 
   pool: {
-    max:5,
+    max:10,
     min:0,
     acquire:30000,
     idle:10000

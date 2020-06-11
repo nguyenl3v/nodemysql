@@ -3,7 +3,7 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-module.exports.register = async function (req, res){
+module.exports.registerController = async function (req, res){
   const created = new Date().getTime();
   const {name,email,password,dob} =  req.body;
   const user = await User.findOne({where: {email:email}});
