@@ -6,14 +6,18 @@ const db = require("./database/db");
 const PORT = process.env.PORT || 4000;
 require("dotenv").config();
 
-db.sequelize.sync();
-
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 const user = require("./router/user");
+const categories = require("./router/categories");
+const posts = require("./router/posts");
 
 app.use("/api", user);
+app.use("/categories", categories);
+app.use("/post", posts);
 
-app.listen(PORT, () => console.log(`started on port ${PORT}`));
+db.sequelize
+  .sync()
+  .then(() => app.listen(PORT, () => console.log(`started on port ${PORT}`)));
