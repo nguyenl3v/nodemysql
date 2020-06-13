@@ -26,6 +26,10 @@ module.exports = db.sequelize.define(
       type: Sequelize.DATE,
       defaultValue: Sequelize.NOW,
     },
+    isDeleted:{
+      type: Sequelize.BOOLEAN,
+      defaultValue: false,
+    }
   },
   {
     timestamps: false,

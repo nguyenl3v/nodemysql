@@ -4,6 +4,7 @@ const sequelize = new Sequelize("base","root","nguyen",{
   host: "127.0.0.1",
   dialect: "mysql",
   operatorsAliases: 1,
+  logging: false,
 
   pool: {
     max:10,
